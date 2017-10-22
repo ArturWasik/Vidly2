@@ -1,0 +1,29 @@
+﻿@using System.Web.UI.WebControls
+@model Vidly2.ViewModels.RandomMovieViewModel
+
+@{
+	ViewBag.Title = "Customers";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+@if (Model.Customers == null)
+{
+	<div>We don't have any customers yet.</div>
+}
+else
+{
+	<table class="table table-bordered table-hover">
+		<tr>
+			<th>Customer</th>
+		</tr>
+
+		@foreach (var c in Model.Customers)
+		{
+			<tr>
+				<td>@Html.ActionLink(@c.Name, "Details", "Customers", new { id = c.Id }, null)</td>
+			</tr>
+		}
+	</table>
+}
+

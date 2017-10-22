@@ -65,7 +65,7 @@ C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\bin\Mic
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\bin\Microsoft.AI.Web.xml
-C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.csprojResolveAssemblyReference.cache
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.csproj.CoreCompileInputs.cache
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.dll
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.pdb
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.csprojResolveAssemblyReference.cache
