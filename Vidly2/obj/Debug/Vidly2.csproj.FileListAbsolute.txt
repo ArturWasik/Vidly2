@@ -69,3 +69,5 @@ C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Deb
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.dll
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.pdb
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.csprojResolveAssemblyReference.cache
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.InitialModel.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.csproj.GenerateResource.Cache
