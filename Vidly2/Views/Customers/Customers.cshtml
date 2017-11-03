@@ -1,5 +1,6 @@
 ﻿@using System.Web.UI.WebControls
-@model Vidly2.ViewModels.RandomMovieViewModel
+@using Vidly2.Models
+@model IEnumerable<Vidly2.Models.Customer>
 
 @{
 	ViewBag.Title = "Customers";
@@ -7,7 +8,7 @@
 }
 
 <h2>Customers</h2>
-@if (Model.Customers == null)
+@if (!Model.Any())
 {
 	<div>We don't have any customers yet.</div>
 }
@@ -18,7 +19,7 @@ else
 			<th>Customer</th>
 		</tr>
 
-		@foreach (var c in Model.Customers)
+		@foreach (var c in Model)
 		{
 			<tr>
 				<td>@Html.ActionLink(@c.Name, "Details", "Customers", new { id = c.Id }, null)</td>
