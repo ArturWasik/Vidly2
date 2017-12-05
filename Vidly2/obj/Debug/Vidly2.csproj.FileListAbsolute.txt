@@ -75,3 +75,5 @@ C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Deb
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.AddMembershipType.resources
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.PopulateMembershipTypes.resources
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.ApplyAnnotationsToCustomerName.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.NameMembershipType.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.PopulateMembershipType.resources
