@@ -68,4 +68,14 @@ C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\bin\Mic
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.csproj.CoreCompileInputs.cache
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.dll
 C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.pdb
-C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.csprojResolveAssemblyReference.cache
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.InitialModel.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.csproj.GenerateResource.Cache
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.AddIsSubscribedToCustomer.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.AddMembershipType.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.PopulateMembershipTypes.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.ApplyAnnotationsToCustomerName.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.NameMembershipType.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.PopulateMembershipType.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.BirthdateCustomer.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.AddGenre.resources
+C:\Users\Artur\Documents\Visual Studio 2017\Projects\UDEMY\Vidly2\Vidly2\obj\Debug\Vidly2.Migrations.PopulateGenre.resources
