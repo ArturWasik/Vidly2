@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,7 @@ namespace Vidly2.Controllers
     public class MoviesController : Controller
     {
 	    private ApplicationDbContext _context;
-
+		
 	    public MoviesController()
 	    {
 		    _context = new ApplicationDbContext();
@@ -25,7 +26,7 @@ namespace Vidly2.Controllers
 	    }
 
 		// GET: Movies/Random
-		public ActionResult Movies()
+		public ActionResult Index()
 		{
 			var movies = _context.Movies.Include(x => x.Genre).ToList();
 
@@ -37,6 +38,64 @@ namespace Vidly2.Controllers
 		    Movie movie = _context.Movies.Include(x => x.Genre).SingleOrDefault(x => x.Id == id);
 
 			return View(movie);
+	    }
+
+	    public ActionResult New()
+	    {
+		    var viewModel = new MovieFormViewModel
+			{
+				Genres = _context.Genres.ToList()
+		    };
+
+		    return View("MovieForm", viewModel);
+	    }
+
+	    public ActionResult Edit(int id)
+	    {
+		    var movie = _context.Movies.Single(x => x.Id == id);
+
+		    if (movie == null)
+		    {
+			    return HttpNotFound();
+		    }
+
+		    var viewModel = new MovieFormViewModel
+			{
+				Movie = movie,
+				Genres = _context.Genres.ToList()
+		    };
+
+		    return View("MovieForm", viewModel);
+	    }
+
+		[HttpPost]
+	    public ActionResult Save(Movie movie)
+	    {
+		    try
+		    {
+			    if (movie.Id == 0)
+			    {
+					movie.DateAdded = DateTime.Now;
+				    _context.Movies.Add(movie);
+			    }
+			    else
+			    {
+				    var customerInDb = _context.Movies.Single(x => x.Id == movie.Id);
+				    customerInDb.Name = movie.Name;
+				    customerInDb.GenreId = movie.GenreId;
+				    customerInDb.ReleaseDate = movie.ReleaseDate;
+				    customerInDb.NumberInStock = movie.NumberInStock;
+			    }
+
+			    _context.SaveChanges();
+			}
+		    catch (Exception exception)
+		    {
+			    ;
+		    }
+		    
+
+		    return RedirectToAction("Index", "Movies");
 	    }
 
 	    [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
