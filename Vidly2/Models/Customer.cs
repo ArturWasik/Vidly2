@@ -12,7 +12,6 @@ namespace Vidly2.Models
 
 		[Required(ErrorMessage = "Please enter customer's name.")]
 		[StringLength(255)]
-
 		public string Name { get; set; }
 
 		public bool IsSubscribedToNewsletter { get; set; }

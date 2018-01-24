@@ -11,97 +11,97 @@ using Vidly2.ViewModels;
 
 namespace Vidly2.Controllers
 {
-    public class MoviesController : Controller
-    {
-	    private ApplicationDbContext _context;
-		
-	    public MoviesController()
-	    {
-		    _context = new ApplicationDbContext();
-	    }
+	public class MoviesController : Controller
+	{
+		private ApplicationDbContext _context;
 
-	    protected override void Dispose(bool disposing)
-	    {
-		    _context = new ApplicationDbContext();
-	    }
+		public MoviesController()
+		{
+			_context = new ApplicationDbContext();
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			_context = new ApplicationDbContext();
+		}
 
 		// GET: Movies/Random
 		public ActionResult Index()
 		{
 			var movies = _context.Movies.Include(x => x.Genre).ToList();
 
-		    return View(movies);
-	    }
+			return View(movies);
+		}
 
-	    public ActionResult Details(int id)
-	    {
-		    Movie movie = _context.Movies.Include(x => x.Genre).SingleOrDefault(x => x.Id == id);
+		public ActionResult Details(int id)
+		{
+			Movie movie = _context.Movies.Include(x => x.Genre).SingleOrDefault(x => x.Id == id);
 
 			return View(movie);
-	    }
+		}
 
-	    public ActionResult New()
-	    {
-		    var viewModel = new MovieFormViewModel
+		public ActionResult New()
+		{
+			var viewModel = new MovieFormViewModel
 			{
 				Genres = _context.Genres.ToList()
-		    };
+			};
 
-		    return View("MovieForm", viewModel);
-	    }
+			return View("MovieForm", viewModel);
+		}
 
-	    public ActionResult Edit(int id)
-	    {
-		    var movie = _context.Movies.Single(x => x.Id == id);
+		public ActionResult Edit(int id)
+		{
+			var movie = _context.Movies.Single(x => x.Id == id);
 
-		    if (movie == null)
-		    {
-			    return HttpNotFound();
-		    }
-
-		    var viewModel = new MovieFormViewModel
+			if (movie == null)
 			{
-				Movie = movie,
-				Genres = _context.Genres.ToList()
-		    };
+				return HttpNotFound();
+			}
 
-		    return View("MovieForm", viewModel);
-	    }
+			var viewModel = new MovieFormViewModel(movie)
+			{
+				Genres = _context.Genres.ToList()
+			};
+
+			return View("MovieForm", viewModel);
+		}
 
 		[HttpPost]
-	    public ActionResult Save(Movie movie)
-	    {
-		    try
-		    {
-			    if (movie.Id == 0)
-			    {
-					movie.DateAdded = DateTime.Now;
-				    _context.Movies.Add(movie);
-			    }
-			    else
-			    {
-				    var customerInDb = _context.Movies.Single(x => x.Id == movie.Id);
-				    customerInDb.Name = movie.Name;
-				    customerInDb.GenreId = movie.GenreId;
-				    customerInDb.ReleaseDate = movie.ReleaseDate;
-				    customerInDb.NumberInStock = movie.NumberInStock;
-			    }
+		public ActionResult Save(Movie movie)
+		{
 
-			    _context.SaveChanges();
+			if (!ModelState.IsValid)
+			{
+				var viewModel = new MovieFormViewModel(movie)
+				{
+					Genres = _context.Genres.ToList()
+				};
 			}
-		    catch (Exception exception)
-		    {
-			    ;
-		    }
-		    
 
-		    return RedirectToAction("Index", "Movies");
-	    }
+			if (movie.Id == 0)
+			{
+				movie.DateAdded = DateTime.Now;
+				_context.Movies.Add(movie);
+			}
+			else
+			{
+				var customerInDb = _context.Movies.Single(x => x.Id == movie.Id);
+				customerInDb.Name = movie.Name;
+				customerInDb.GenreId = movie.GenreId;
+				customerInDb.ReleaseDate = movie.ReleaseDate;
+				customerInDb.NumberInStock = movie.NumberInStock;
+			}
 
-	    [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
-	    public ActionResult ByReleaseDate(int year, int month)
-	    {
-		    return Content(year + "/" + month);
-	    }
+			_context.SaveChanges();
+
+			return RedirectToAction("Index", "Movies");
+		}
+
+		[Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
+		public ActionResult ByReleaseDate(int year, int month)
+		{
+			return Content(year + "/" + month);
+		}
 	}
 }
