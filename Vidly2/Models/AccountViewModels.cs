@@ -68,6 +68,10 @@ namespace Vidly2.Models
 		[Display(Name = "Driving License")]
 	    public string DrivingLicense { get; set; }
 
+		[Required]
+		[Display(Name = "Phone")]
+		public string Phone { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
